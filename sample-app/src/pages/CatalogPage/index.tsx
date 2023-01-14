@@ -12,10 +12,12 @@ import SearchInput from '../../ui-components/SearchInput';
 import { useSearchTimeout } from '../../hooks/useSearchTimeout';
 import ErrorPage from '../ErrorPage';
 import Error from '../../components/Error';
+import LeftAsideMenu from '../../ui-components/LeftAsideMenu';
 
 const CatalogPage: FC = () => {
     const [pagination, setPagination] = useState<boolean>(false)
     const [stopFirstRender, setStopFirstRender] = useState<boolean>(false)
+    const [visibleFilterMenu, setVisibleFilterMenu] = useState<boolean>(false)
     const { products, isLoading, productError, filtrCategoryError } = useAppSelector(state => state.catalog)
     const { genderCategory, catalogCategory, colorCategory, sizeCategory, search } = useAppSelector(state => state.catalog.filtr)
     const { totalPerPage, currentPage } = useAppSelector(state => state.catalog.pagination)
@@ -73,8 +75,10 @@ const CatalogPage: FC = () => {
             {productError ?
                 <ErrorPage error={productError} /> :
                 <div id='header-catalog' className='catalog-page'>
-
                     <div className='container'>
+                    <LeftAsideMenu visible={visibleFilterMenu} setVisible={setVisibleFilterMenu} >
+                        <AsideCatalogFilter/>
+                    </LeftAsideMenu>
                         <div className='catalog-page__search'>
                             <SearchInput type='text' value={search} onChange={onChangeSearch} dispatch={dispatch} />
                         </div>

@@ -38,3 +38,11 @@
         font-size: 48px;
     }
 }
+
+@media (max-width: 350px) {
+    .title {
+        &_fz46 {
+            font-size: 36px;
+        }
+    }
+}

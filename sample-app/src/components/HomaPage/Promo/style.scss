@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(180deg, rgba(61, 61, 61, 0.5) 0%, rgba(61, 61, 61, 0) 100%), url('../../../assets/images/titleBackground.jpg') no-repeat 50%/cover;
+    background: linear-gradient(180deg, rgba(61, 61, 61, 0.5) 0%, rgba(61, 61, 61, 0) 100%), url('../../../assets/images/titleBackground.jpg') no-repeat 100%/cover;
     &__container {
         min-width: 375px;
     }
@@ -31,6 +31,14 @@
         }
         &:hover {
             opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .promo {
+        &__container {
+            min-width: 260px;
         }
     }
 }

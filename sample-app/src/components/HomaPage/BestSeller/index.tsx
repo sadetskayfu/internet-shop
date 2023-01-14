@@ -26,16 +26,19 @@ const BestSeller: FC = () => {
                     <div className='divider'></div>
                     <h2 className='title_fz20'>Best seller</h2>
                     {productError ?
-                        <Error error={productError}/>
+                        <Error error={productError} />
                         :
                         <div className='best-seller__slider'>
                             <CustomSlider>
-                                {bestSellerProducts?.map((item) => <div className='best-seller__slider-content'><ProductCard key={item.id} item={item} /></div>)}
+                                {bestSellerProducts?.map((item) =>
+                                    <div key={item.id} className='best-seller__slider-content'>
+                                        <ProductCard item={item} />
+                                    </div>)}
                             </CustomSlider>
                         </div>}
                 </div>}
         </section>
-    );  
+    );
 };
 
 export default BestSeller;

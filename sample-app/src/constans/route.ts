@@ -3,4 +3,5 @@ export const ROUTE = {
     LOGIN_PAGE: '/login',
     CATALOG: 'catalog',
     ABOUT: 'about',
+    PROFILE: 'profile',
 }

@@ -13,18 +13,13 @@
     &__items {
         padding-top: 30px;
         display: grid;
-        grid-template-columns: minmax(190px, auto) 1fr;
+        grid-template-columns: minmax(190px, auto) minmax(auto, auto);
         grid-template-rows: auto;
         justify-content: center;
         gap: 30px;
     }
-    &__filtr {
-        display: flex;
-        gap: 35px;
-    }
     &__product-items {
         text-align: center;
-        
         h3 {
             color: var(--orange);
         }
@@ -34,5 +29,16 @@
         justify-content: center;
         align-items: center;
         margin-top: 50px;
+    }
+}
+
+@media (max-width: 550px) {
+    .catalog-page {
+        &__aside-filtr {
+            display: none;
+        }
+        &__items {
+            grid-template-columns: 1fr;
+        }
     }
 }

@@ -1,30 +1,5 @@
 .filter-section {
-    &__title {
-        padding-left: 5px;
-        padding-right: 5px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-        transition: all 0.3s;
-        color: var(--black);
-        &:hover {
-            color: var(--orange);
-        }
-    }
-    &__items-container {
-        overflow: hidden;
-    }
-    &__category-items {
-        transform: translateY(-100%);
-        transition: all 0.2s;
-        margin-bottom: -1000%;
-        color: var(--black);
-        &.active {
-            transform: translateY(0%);
-            margin-bottom: 0%;
-        }
-    }
+    
     &__btn-clear {
         width: 100%;
         border: none;
@@ -44,15 +19,6 @@
     }
     &__icon-clear{
         fill: var(--errors);
-    }
-    &__arrow-icon {
-        fill: var(--orange);
-        width: 25px;
-        height: 25px;
-        transition: all 0.3s;
-        &.active {
-            transform: rotate(180deg);
-        }
     }
 }
 
