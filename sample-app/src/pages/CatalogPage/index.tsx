@@ -13,6 +13,13 @@ import { useSearchTimeout } from '../../hooks/useSearchTimeout';
 import ErrorPage from '../ErrorPage';
 import Error from '../../components/Error';
 import LeftAsideMenu from '../../ui-components/LeftAsideMenu';
+import { ReactComponent as Filter } from '../../assets/icons/filter.svg'
+import { ReactComponent as Close } from '../../assets/icons/close.svg'
+
+interface IFilterMenuProps {
+    visible: boolean
+    setVisible: any
+}
 
 const CatalogPage: FC = () => {
     const [pagination, setPagination] = useState<boolean>(false)
@@ -75,11 +82,13 @@ const CatalogPage: FC = () => {
             {productError ?
                 <ErrorPage error={productError} /> :
                 <div id='header-catalog' className='catalog-page'>
-                    <div className='container'>
-                    <LeftAsideMenu visible={visibleFilterMenu} setVisible={setVisibleFilterMenu} >
-                        <AsideCatalogFilter/>
-                    </LeftAsideMenu>
+                    <div className='catalog-page__container container'>
+                        <FilterMenu visible={visibleFilterMenu} setVisible={setVisibleFilterMenu} />
                         <div className='catalog-page__search'>
+                            <div className='catalog-page__open-filter-btn' onClick={() => setVisibleFilterMenu(true)}>
+                                <Filter className='catalog-page__filter-icon' />
+                                Filter
+                            </div>
                             <SearchInput type='text' value={search} onChange={onChangeSearch} dispatch={dispatch} />
                         </div>
                         <div className='catalog-page__items'>
@@ -112,5 +121,18 @@ const CatalogPage: FC = () => {
         </>
     );
 };
+
+const FilterMenu: FC<IFilterMenuProps> = ({ visible, setVisible }) => {
+    return (
+        <LeftAsideMenu visible={visible} setVisible={setVisible}>
+            <div className='filter-menu'>
+                <Close onClick={() => setVisible(false)} className='filter-menu__close circle-icons' />
+                <div className='filter-menu__content'>
+                    <AsideCatalogFilter />
+                </div>
+            </div>
+        </LeftAsideMenu>
+    )
+}
 
 export default CatalogPage;

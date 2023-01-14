@@ -27,3 +27,9 @@
         transform: translateX(0%);
     }
 }
+
+@media (max-width: 420px) {
+    .aside-menu {
+        width: 320px;
+    }
+}
