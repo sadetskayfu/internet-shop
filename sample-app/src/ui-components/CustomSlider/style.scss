@@ -1,0 +1,18 @@
+.slider-container {
+    position: relative;
+    &__arrows {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        top:50%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+    }
+    &__slider {
+        width: 85%;
+        margin: 0 auto;
+        z-index: 1;
+    }
+}
+

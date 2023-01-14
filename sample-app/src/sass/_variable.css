@@ -1,0 +1,11 @@
+/*  css variables */
+:root {
+    --orange: rgb(213, 196, 234);
+    --main_hover: rgb(94, 94, 94);
+    --slider_hover:rgb(28, 28, 28, 0.7);
+    --errors: rgba(147, 25, 25, 0.817);
+    --white: rgb(28, 28, 28);
+    --black: white;
+}
+
+/* --main_hover: rgb(94, 94, 94); */

@@ -1,0 +1,20 @@
+.error {
+    background-color: var(--white);
+    padding-top: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    &__title {
+        color: var(--errors);
+    }
+    &__error {
+        color: var(--errors);
+        margin:  10px 0;
+    }
+    &__text {
+        color: var(--black);
+        opacity: 0.9;
+    }
+}

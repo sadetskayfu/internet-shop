@@ -1,0 +1,12 @@
+.product-reviews {
+    padding-top: 50px;
+    &__title {
+        color: var(--black);
+    }
+    &__reviews {
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+}

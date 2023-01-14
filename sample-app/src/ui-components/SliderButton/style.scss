@@ -1,0 +1,30 @@
+.slider-button {
+    border: none;
+    
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        background-color: var(--main_hover);
+        .slider-button {
+            &__arrow {
+                opacity: 1;
+            }
+        }
+    }
+    &__arrow {
+        transition: all 0.3s;
+        width: 60px;
+        height: 60px;
+        fill: var(--orange);
+        opacity: 0.5;
+        &.active {
+            transform: rotate(180deg);
+        }
+    }
+}

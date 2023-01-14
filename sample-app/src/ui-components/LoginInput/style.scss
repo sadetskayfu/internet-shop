@@ -1,0 +1,65 @@
+@import '../../sass/_variable.css';
+
+.login-input {
+    position: relative;
+    height: 40px;
+
+    &.active {
+        input {
+            border-bottom: 1px solid red
+        }
+
+        label {
+            color: red;
+        }
+    }
+
+    input {
+        height: 100%;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid var(--orange);
+        font-size: 16px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background: none;
+        transition: all 0.3s;
+        color: var(--orange);
+
+        &:focus {
+            border-bottom: 1px solid white;
+            color: white;
+        }
+
+        &:focus+label {
+            color: white;
+        }
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus {
+        -webkit-text-fill-color: var(--orange);
+        -webkit-box-shadow: 0 0 0px 40rem #3c3b3b inset;
+    }
+
+    &__message-error {
+        height: 20px;
+        color: rgb(255, 15, 15);
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+
+    label {
+        transition: all 0.3s;
+        color: var(--orange);
+        display: block;
+        position: absolute;
+        top: -11px;
+        left: 12px;
+        height: 18px;
+        padding: 0 8px;
+        font-weight: 100;
+        margin-bottom: 0;
+    }
+}

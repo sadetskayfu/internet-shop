@@ -1,0 +1,35 @@
+@import '../../sass/_variable.css';
+
+.link-back-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        .link-back-container {
+            &__line {
+                width: 100%;
+            }
+            &__link {
+                opacity: 1;
+            }
+        }
+    }
+    &__link {
+        text-decoration: none;
+        color: var(--black);
+        font-size: 14px;
+        transition: all 0.3s;
+        opacity: 0.9;
+        cursor: pointer;
+    }
+    &__line {
+        position: absolute;
+        top: 24px;
+        height: 1px;
+        width: 0%;
+        background-color:var(--orange);
+        transition: all 0.5s;
+    }
+}

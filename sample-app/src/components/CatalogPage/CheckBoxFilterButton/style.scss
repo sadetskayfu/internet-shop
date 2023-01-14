@@ -1,0 +1,13 @@
+.checkbox-filter-button {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    height: 30px;
+    transition: all 0.1s;
+    color: var(--black);
+    &:hover {
+        background: var(--main_hover);
+    }
+}

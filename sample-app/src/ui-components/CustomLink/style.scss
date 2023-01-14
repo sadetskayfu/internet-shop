@@ -1,0 +1,32 @@
+
+.custom-link-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        .custom-link-container {
+            &__link {
+                opacity: 1;
+            }
+            &__line {
+                width: 100%;
+            }
+        }
+    }
+    &__link {
+        text-decoration: none;
+        font-size: 14px;
+        color: var(--white);
+        opacity: 0.9; 
+    }
+    &__line {
+        position: absolute;
+        top: 24px;
+        height: 1px;
+        width: 0%;
+        background-color: var(--orange);
+        transition: all 0.5s;
+    }
+}

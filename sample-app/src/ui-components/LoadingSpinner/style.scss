@@ -1,0 +1,103 @@
+@import '../../sass/_variable.css';
+
+.load-spinner-container {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    pointer-events: all; 
+}
+
+.spinner {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 50%;
+    
+    .blob {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border: 2px solid var(--orange);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      
+      &.top {
+        top: 0;
+        animation: blob-top 1s infinite ease-in;
+      }
+      &.bottom {
+        top: 100%;
+         animation: blob-bottom 1s infinite ease-in;
+      }
+      &.left {
+        left: 0;
+        animation: blob-left 1s infinite ease-in;
+      }
+    }
+    
+    .move-blob {
+      background: var(--orange);
+      top: 0;
+      animation: blob-spinner-mover 0.5s infinite ease-in;
+    }
+  }
+  
+  @keyframes blob-bottom {
+    25%, 50%, 75% {
+      top: 50%;
+      left: 100%;
+    }
+    100% {
+      top: 0;
+      left: 50%;
+    }
+  }
+  @keyframes blob-left {
+    25% {
+      top: 50%;
+      left: 0;
+    }
+    50%, 100% {
+      top: 100%;
+      left: 50%;
+    }
+  }
+  @keyframes blob-top {
+    50% {
+      top: 0;
+      left: 50%;
+    }
+    75%, 100% {
+      top: 50%;
+      left: 0;
+    }
+  }
+  
+  @keyframes blob-spinner-mover {
+    0%, 100% {
+      top: 0;
+      left: 50%;
+    }
+    25% {
+      top: 50%;
+      left: 100%;
+    }
+    50% {
+      top: 100%;
+      left: 50%;
+    }
+    75% {
+      top: 50%;
+      left: 0;
+    }
+  }

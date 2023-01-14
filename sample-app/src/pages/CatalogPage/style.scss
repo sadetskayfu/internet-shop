@@ -1,0 +1,38 @@
+.catalog-page {
+    min-height: 100vh;
+    background-color: var(--white);
+    padding-bottom: 100px;
+    padding-top: 100px;
+    &__search {
+        padding-top: 10px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+    &__items {
+        padding-top: 30px;
+        display: grid;
+        grid-template-columns: minmax(190px, auto) 1fr;
+        grid-template-rows: auto;
+        justify-content: center;
+        gap: 30px;
+    }
+    &__filtr {
+        display: flex;
+        gap: 35px;
+    }
+    &__product-items {
+        text-align: center;
+        
+        h3 {
+            color: var(--orange);
+        }
+    }
+    &__pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+}

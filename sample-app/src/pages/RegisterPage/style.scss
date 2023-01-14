@@ -1,0 +1,79 @@
+@import '../../sass/_variable.css';
+
+.login {
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+    background: linear-gradient(90deg, rgba(23, 22, 22, 0) 0%, rgba(18, 17, 17, 0.821) 30%), url('../../assets/images/titleBackground.jpg') no-repeat 70%/cover;
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 600px;
+        width: 500px;
+        padding: 20px;
+        color: var(--orange)
+    }
+
+    &__form {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    &__href {
+        span {
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}
+
+.registr-content {
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transform: translateX(50%) scale(0.7) rotate(-100deg);
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.5s;
+    &.active {
+        transform: translateX(0%) scale(1) rotate(0deg);
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.login-content {
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: all 0.5s;
+    &.active {
+        transform: translateX(50%) scale(0.7) rotate(-100deg);
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.modal-registr-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    &__text {
+        text-align: center;
+    }
+}

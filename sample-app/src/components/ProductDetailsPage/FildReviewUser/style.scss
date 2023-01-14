@@ -1,0 +1,33 @@
+.fild-review-user {
+    width: 100%;
+    border-bottom: 1px solid var(--main_hover);
+    padding: 10px;
+    &__user {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        color: var(--black);
+    }
+    &__logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        padding: 5px;
+        fill: var(--black);
+        opacity: 0.9;
+        box-shadow: 0 0 4px 1px var(--black);
+    }
+    &__fild {
+        padding-top: 15px;
+        color: var(--black);
+        opacity: 0.9;
+        span {
+            color: var(--orange);
+            cursor: pointer;
+            font-weight: bold;
+            &:hover {
+                text-decoration:underline;
+            }
+        }
+    }
+}

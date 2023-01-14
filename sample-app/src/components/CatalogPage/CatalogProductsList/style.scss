@@ -1,0 +1,23 @@
+.catalog-product-list-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.catalog-product-list-enter {
+    opacity: 0;
+  }
+  .catalog-product-list-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+  .catalog-product-list-exit {
+    opacity: 1;
+  }
+  .catalog-product-list-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+  }
+

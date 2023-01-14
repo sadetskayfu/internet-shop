@@ -1,0 +1,39 @@
+.fly-to-cart {
+    position: absolute;
+    width: 290px;
+    z-index: 5;
+    height: 360px;
+    padding: 5px;
+    opacity: 0;
+    pointer-events: none;
+    &.active {
+        opacity: 1;
+        animation: fly_to_cart 1s ease-in-out;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+}
+
+@keyframes fly_to_cart {
+    0% {
+        right: 0;
+        top: 0;
+    }
+    50% {
+        right: 0;
+        top: -150px;
+    }
+    80% {
+        right: -500px;
+        top: -150px;
+    }
+    100% {
+        right: -500px;
+        top: -150px;
+        transform: scale(0);
+    }
+}

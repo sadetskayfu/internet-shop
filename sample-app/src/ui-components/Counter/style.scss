@@ -1,0 +1,41 @@
+.counter {
+    width: 67px;
+    background-color: var(--white);
+    height: 35px;
+    box-shadow: 0 0 2px 1px var(--orange);
+    border-radius: 10px 0 0 0;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    &__items {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 2fr 1fr 2fr;
+        align-items: center;
+        color: var(--orange);
+    }
+    &__decrement {
+        cursor: pointer;
+        border-radius: 10px 0 0 0;
+        text-align: center;
+        transition: all 0.2s;
+        &:hover {
+            background-color: var(--main_hover);
+        }
+        &.active {
+            cursor: default;
+        }
+    }
+    &__increment {
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.2s;
+        &:hover {
+            background-color: var(--main_hover);
+        }
+    }
+    &__count {
+        font-weight: bold;
+        text-align: center;
+    }
+}

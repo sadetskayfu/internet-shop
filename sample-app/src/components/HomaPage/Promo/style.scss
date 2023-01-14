@@ -1,0 +1,36 @@
+.promo {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(61, 61, 61, 0.5) 0%, rgba(61, 61, 61, 0) 100%), url('../../../assets/images/titleBackground.jpg') no-repeat 50%/cover;
+    &__container {
+        min-width: 375px;
+    }
+    &__items {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+    &__title {
+        color: white;
+        opacity: 0.9;
+    }
+    &__divider {
+        width: 120px;
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        opacity: 0.8;
+        gap: 7px;
+        transition: all 0.3s;
+        a {
+            color: white;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

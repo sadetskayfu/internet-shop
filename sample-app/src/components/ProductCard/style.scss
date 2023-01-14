@@ -1,0 +1,112 @@
+.product-card-container {
+    position: relative;
+}
+.product-card {
+    position: relative;
+    border-radius: 10px;
+    max-width: 290px;
+    min-height: 530px;
+    overflow: hidden;
+    transition: all 0.3s;
+    padding-bottom: 10px;
+    background: linear-gradient(180deg, var(--orange) 0%, rgba(61, 61, 61, 0) 100%);
+    &:hover {
+        box-shadow: 0px 4px 0px 4px var(--orange);
+        background: linear-gradient(360deg, var(--main_hover) 0%, rgba(61, 61, 61, 0) 100%);
+        .product-card {
+            &__cart {
+                width: 100%;
+            }
+            &__title-cart-container {
+                opacity: 1;
+            }
+        }
+    }
+    &__cart {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all 0.5s;
+        width: 50px;
+        height: 50px;
+        background: var(--main_hover);
+        box-shadow: 0 0 5px 2px var(--orange);
+        border: none;
+        &:hover {
+            background-color: var(--orange);
+        }
+    }
+    &__cart-icon {
+        cursor: pointer;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: 13px;
+        right: 13px;
+        transition: all 0.5s;
+        fill: var(--orange);
+    }
+    &__title-cart-container {
+        opacity: 0;
+        position: absolute;
+        pointer-events: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 100%;
+        transition: all 0.4s;
+    }
+    &__title-cart {
+        color: var(--white);
+    }
+    &__img {
+        cursor: pointer;
+        width: 290px;
+        height: 360px;
+        padding: 5px;
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px 0 0 0;
+            object-fit: cover;
+        }
+    }
+    &__category-container {
+        width: 100%;
+        padding: 5px;
+    }
+    &__category {
+        height: 35px;
+    }
+    &__title {
+        min-height: 50px;
+        padding-top: 5px;
+        text-align: center;
+        border-top: 1px solid var(--orange);
+        width: 100%;
+    }
+    &__size {
+        display: flex;
+        gap: 5px;
+    }
+    &__desc {
+        margin-top: 2px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        color: var(--black);
+    }
+    &__color {
+        display: flex;
+        gap: 5px;
+    }
+    &__color-cirkle {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: black;
+        box-shadow: 0 0 4px 1px var(--black);
+    }
+}

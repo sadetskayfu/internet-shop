@@ -1,0 +1,166 @@
+@import '../../sass/_variable.css';
+
+.header {
+    background-color: black;
+    z-index: 20;
+    position: fixed;
+    width: 100%;
+    &__items {
+        height: 80px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+    }
+    &__navigate-menu {
+        display: flex;
+        gap: 25px;
+        justify-self: start;
+        a {
+            font-size: 14px;
+            color: white;
+        }
+    }
+    &__title {
+        justify-self: center;
+    }
+    &__title-logo {
+        width: 160px;
+        height: 40px;
+    }
+    &__right-items {
+        display: flex;
+        align-items: center;
+        justify-self: end;
+        gap: 20px;
+        a {
+            font-size: 14px;
+            color: white;
+        }
+    }
+     &__user-name {
+        color: white;
+    }
+    &__profile-items {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        &.active {
+            cursor: pointer;
+            &:hover {
+                .header {
+                    &__profile-logo {
+                        fill: var(--orange);
+                        cursor: pointer;
+                    }
+                    &__profile-arrow-down {
+                        fill: var(--orange);
+                    }
+                }
+            }
+        }
+    }
+    &__profile-logo {
+        cursor: default;
+        fill: white;
+        &.active {
+            fill: var(--orange);
+        }
+    }
+    &__profile-arrow-down {
+        transition: all 0.3s;
+        fill: white;
+        &.active {
+            transform: rotate(180deg);
+            fill: var(--orange);
+        }
+    }
+    &__shopping-cart {
+        position: relative;
+        fill: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.active {
+            &::after {
+                position: absolute;
+                content: attr(data-product-cart);
+                color: white;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                border: 2px solid var(--orange);
+                text-align: center;
+                line-height: 25px;
+                font-size: 15px;
+                left: -25%;
+                bottom: -5%;
+                background-color: black;
+            }
+        }
+        &:hover {
+            fill: var(--orange);
+        }
+       
+    }
+}
+
+.profile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+    &.active {
+        pointer-events: all;
+    }
+    &__position {
+        display: flex;
+        justify-content: end;
+    }
+    &__container {
+        margin-top: 80px;
+        width: 200px;
+        overflow: hidden;
+        margin-right: 60px;
+    }
+    &__content {
+        transform: translateY(-100%);
+        padding: 30px 10px;
+        transition: all 0.2s;
+        border-top: 1px solid var(--orange);
+        border-radius: 0px 30px;
+        background-color: black;
+        &.active {
+            transform: translateY(0%);
+        }
+    }
+    &__link {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        fill: white;
+        cursor: pointer;
+        &:hover {
+            background-color: var(--orange)
+        }
+        a {
+            color: white;
+            font-size: 16px;
+        }
+        button {
+            background: none;
+            width: 100%;
+            border: none;
+            text-align: start;
+            font-size: 16px;
+            color: white;
+        }
+    }
+    &__profile-icon {
+        width: 15px;
+        height: 15px;
+    }
+}

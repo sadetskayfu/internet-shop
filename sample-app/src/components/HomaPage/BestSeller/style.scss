@@ -1,0 +1,12 @@
+.best-seller {
+    padding: 100px 0 100px 0;
+    color: var(--black);
+    background-color: var(--white);
+    min-height: 100vh;
+    &__slider {
+        margin-top: 50px;
+    }
+    &__slider-content {
+        padding: 20px;
+    }
+}
