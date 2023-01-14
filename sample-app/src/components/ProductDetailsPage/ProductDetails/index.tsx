@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import './style.scss'
-import { useAppDispatch } from '../../../hooks/redux';
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { cartSlice } from '../../../store/reducer/CartSlice';
 import Button from '../../../ui-components/Button';
 import ImageSlider from '../../../ui-components/imageSlider';
@@ -11,18 +11,23 @@ import { ReactComponent as Zoom } from '../../../assets/icons/zoom.svg'
 import FlyToCart from '../../../ui-components/FlyToCart';
 import DropDown from '../../../ui-components/DropDown';
 import { IProduct } from '../../../models/product';
+import Error from '../../Error';
+import WriteFeedBackModal from '../WriteFeedBackModal';
 
 interface IProductDetailsProps {
-    product: IProduct  | null
+    product: IProduct | null
 }
 
-const ProductDetails: FC<IProductDetailsProps> = ({product}) => {
-    
+const ProductDetails: FC<IProductDetailsProps> = ({ product }) => {
+
     const [selectedImage, setSelectedImage] = useState<number>(0)
     const [isVisibleModal, setIsVisibleModal] = useState<boolean>(false)
+    const [isVisibleFeedBackModal, setIsVisibleFeedBackModal] = useState<boolean>(false)
     const [visibleAddToCartSpan, setVisibleAddToCartSpan] = useState<boolean>(false)
     const [colorValue, setColorValue] = useState<string>('')
     const [sizeValue, setSizeValue] = useState<string>('')
+
+    const { productError } = useAppSelector(state => state.productDetails)
 
     const { addProduct } = cartSlice.actions
     const dispatch = useAppDispatch()
@@ -52,6 +57,11 @@ const ProductDetails: FC<IProductDetailsProps> = ({product}) => {
 
     return (
         <section className='product-details'>
+            {productError.length > 0 ?
+                <Error error={productError} />
+                :
+                <>
+                        <WriteFeedBackModal visible={isVisibleFeedBackModal} setVisible={setIsVisibleFeedBackModal}/>
                     <Modal isVisible={isVisibleModal} setIsVisible={setIsVisibleModal} padding='0px'>
                         <div className='prduct-details__slider'>
                             <ImageSlider images={product?.images} initialSlide={selectedImage} />
@@ -132,9 +142,14 @@ const ProductDetails: FC<IProductDetailsProps> = ({product}) => {
                                     </div>
                                 </DropDown>
                             </div>
+                                <div className='product-details__btn-feedback'>
+                                    <Button onClick={() => setIsVisibleFeedBackModal(true)} isValid={true}>Write a feedback</Button>
+                                </div>
                         </div>
                     </div>
-                </section>
+                </>
+            }
+        </section>
     );
 };
 

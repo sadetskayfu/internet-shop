@@ -2,6 +2,7 @@ import axios from "axios";
 import { IProduct } from '../models/product'
 import { IFetchCatalogFiltr } from "../models/catalogFiltr";
 import { IgetAllFiltrProductsParams } from "../models/catalogAPI";
+import { IReviews } from "../models/reviews";
 
 const baseUrl = 'http://localhost:3333/'
 
@@ -27,13 +28,18 @@ export default class CatalogService {
         return response.data
     }
 
-    static async getProductById(id: number) {
-        const response = await axios.get<IProduct>(`${baseUrl}products/${id}`)
+    static async getBestSellerProduct(limit = 10) {
+        const response = await axios.get<IProduct>(`${baseUrl}products/?_limit=${limit}&_sort=sales&_order=desc`)
         return response.data
     }
 
-    static async getBestSellerProduct(limit = 10) {
-        const response = await axios.get<IProduct>(`${baseUrl}products/?_limit=${limit}&_sort=sales&_order=desc`)
+    static async getReviewsProductById(id: number) {
+        const response = await axios.get<IReviews>(`${baseUrl}reviews/${id}`)
+        return response.data
+    }
+
+    static async getProductById(id: number) {
+        const response = await axios.get<IProduct>(`${baseUrl}products/${id}`)
         return response.data
     }
 }

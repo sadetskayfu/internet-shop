@@ -30,20 +30,6 @@ export const getFiltrCategoryThunk = createAsyncThunk(
     }
 )
 
-export const getProductByIdThunk = createAsyncThunk(
-    'catalog/getProductByIdThunk',
-    async(id: number, thunkAPI) => {
-        try {
-            const response = await CatalogService.getProductById(id)
-            return response
-        } catch (error) {
-            if (error instanceof Error) {
-                return thunkAPI.rejectWithValue(error.message)
-            }
-        }
-    }
-)
-
 export const getBestSellerProductThunk = createAsyncThunk(
     'catalog/getBestSellerProductThunk',
     async(limit: number, thunkAPI) => {

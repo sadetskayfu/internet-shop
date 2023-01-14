@@ -25,6 +25,22 @@
             "black", "red", "white", "blue", "green", "pink", "grey", "brown", "yellow"
         ]
     },
+    "reviews": [
+        {
+            "id": 1,
+            "reviews": [
+                {
+                    "email": "asd@mail.ru",
+                    "review": "dasdasd",
+                    "data": "20.14.2019"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "reviews": []
+        }
+    ],
     "products": [
         {
             "id": 1,

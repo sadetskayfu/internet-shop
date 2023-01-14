@@ -1,8 +1,3 @@
-export interface IReviews {
-    email: string
-    descr: string
-}
-
 export interface IProduct {
     id: number;
     genderCategory: string[];
@@ -13,7 +8,6 @@ export interface IProduct {
     color: string[];
     sales: number;
     images: string[];
-    reviews: IReviews[] | []
     counter: number
 }
 

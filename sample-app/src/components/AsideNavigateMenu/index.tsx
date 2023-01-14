@@ -23,19 +23,19 @@ const AsideNavigateMenu: FC<IAsideNavigateMenuProps> = ({ visible, setVisible, u
             <section className='aside-navigate-menu'>
                 <Close onClick={() => setVisible(false)} className='aside-navigate-menu__close circle-icons' />
                 <div className='aside-navigate-menu__content'>
-                    <NavigateLink to={ROUTE.HOME}>HOME</NavigateLink>
-                    <NavigateLink to={ROUTE.CATALOG}>CATALOG</NavigateLink>
-                    <NavigateLink to={ROUTE.ABOUT}>ABOUS US</NavigateLink>
+                    <NavigateLink to={ROUTE.HOME} onClick={() => setVisible(false)}>HOME</NavigateLink>
+                    <NavigateLink to={ROUTE.CATALOG} onClick={() => setVisible(false)}>CATALOG</NavigateLink>
+                    <NavigateLink to={ROUTE.ABOUT} onClick={() => setVisible(false)}>ABOUS US</NavigateLink>
                     {userEmail.length > 0 ?
                         <>
-                            <NavigateLink to={ROUTE.PROFILE}>PROFILE</NavigateLink>
+                            <NavigateLink to={ROUTE.PROFILE} onClick={() => setVisible(false)}>PROFILE</NavigateLink>
                             <div className='aside-navigate-menu__user-name'>
                                 {userEmail}
                             </div>
                             <button onClick={() => dispatch(logoutThunk())} >LOGOUT</button>
                         </>
                         :
-                        <NavigateLink to={ROUTE.LOGIN_PAGE}>SIGN IN</NavigateLink>}
+                        <NavigateLink to={ROUTE.LOGIN_PAGE} onClick={() => setVisible(false)}>SIGN IN</NavigateLink>}
                 </div>
             </section>
         </LeftAsideMenu>

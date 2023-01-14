@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IProduct } from "../../models/product";
 import { ICatalogFiltr, ICatalogPagination, IFetchCatalogFiltr } from "../../models/catalogFiltr";
-import { getFiltrProductsThunk, getFiltrCategoryThunk, getProductByIdThunk, getBestSellerProductThunk } from '../thunk/CatalogThunk'
+import { getFiltrProductsThunk, getFiltrCategoryThunk, getBestSellerProductThunk } from '../thunk/CatalogThunk'
 
 interface IgetFilterProductsThunkAction {
     products: IProduct[]
@@ -9,7 +9,6 @@ interface IgetFilterProductsThunkAction {
 }
 
 interface IInitialState {
-    productDetails: IProduct | null
     products: IProduct[]
     bestSellerProducts: IProduct[]
     isLoading: boolean
@@ -21,7 +20,6 @@ interface IInitialState {
 }
 
 const initialState: IInitialState = {
-    productDetails: null,
     products: [],
     bestSellerProducts: [],
     isLoading: false,
@@ -96,7 +94,6 @@ export const catalogSlice = createSlice({
         },
 
         // PAGINATION
-
         setCurrentPage: (state, action: PayloadAction<number>) => {
             state.pagination.currentPage = action.payload
         }
@@ -105,7 +102,6 @@ export const catalogSlice = createSlice({
         builder
 
             // GET ALL PRODUCTS WITH FILTR SEARCH SORT
-
             .addCase(getFiltrProductsThunk.pending.type, (state) => {
                 state.isLoading = true
             })
@@ -121,7 +117,6 @@ export const catalogSlice = createSlice({
             })
 
             // GET ALL FILTR CATEGORYS
-
             .addCase(getFiltrCategoryThunk.pending.type, (state) => {
                 state.isLoading = true
             })
@@ -138,23 +133,7 @@ export const catalogSlice = createSlice({
                 state.isLoading = false
             })
 
-            // GET PRODUCT BY ID
-
-            .addCase(getProductByIdThunk.pending.type, (state) => {
-                state.isLoading = true
-            })
-            .addCase(getProductByIdThunk.rejected.type, (state, action :PayloadAction<string>) => {
-                state.isLoading = false
-                state.productError = action.payload
-            })
-            .addCase(getProductByIdThunk.fulfilled.type, (state, action: PayloadAction<IProduct>) => {
-                state.productDetails = action.payload
-                state.productError = ''
-                state.isLoading = false
-            })
-
             // GET BEST SELLER PRODUCTS FOR HOME PAGE
-
             .addCase(getBestSellerProductThunk.pending.type, (state) => {
                 state.isLoading = true
             })

@@ -28,6 +28,11 @@
     }
 }
 
+.aside-menu::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
 @media (max-width: 420px) {
     .aside-menu {
         width: 320px;

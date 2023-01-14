@@ -1,5 +1,3 @@
-import { IReviews } from "./product";
-
 export interface IProductInCart {
     id: number;
     genderCategory: string[];
@@ -11,5 +9,4 @@ export interface IProductInCart {
     sales: number;
     images: string[];
     counter: number;
-    reviews: IReviews[] | [];
 }

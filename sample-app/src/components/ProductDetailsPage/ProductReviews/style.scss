@@ -9,4 +9,8 @@
         flex-direction: column;
         gap: 25px;
     }
+    &__no-reviews {
+        color: var(--black);
+        opacity: 0.9;
+    }
 }
