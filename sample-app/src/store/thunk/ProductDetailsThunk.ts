@@ -1,5 +1,8 @@
 import CatalogService from "../../API/CatalogService"
 import { createAsyncThunk } from "@reduxjs/toolkit"
+import { ICreateReview } from "../../models/reviews"
+
+
 
 export const getProductByIdThunk = createAsyncThunk(
     'product-details/getProductByIdThunk',
@@ -21,6 +24,21 @@ export const getReviewsByIdThunk = createAsyncThunk(
         try {
             const response = await CatalogService.getReviewsProductById(id)
             return response
+        } catch (error) {
+            if (error instanceof Error) {
+                return thunkAPI.rejectWithValue(error.message)
+            }
+        }
+    }
+)
+
+
+export const createReviewThunk = createAsyncThunk(
+    'product-details/createReviewThunk',
+    async (review: ICreateReview, thunkAPI) => {
+        try {
+            const response = await CatalogService.createReview(review)
+            return response.status
         } catch (error) {
             if (error instanceof Error) {
                 return thunkAPI.rejectWithValue(error.message)

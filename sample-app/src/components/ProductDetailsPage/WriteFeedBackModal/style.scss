@@ -1,3 +1,22 @@
 .write-feedback-modal {
     width: 600px;
+    &__text-area {
+        height: 200px;
+    }
+    &__btn {
+        min-height: 40px;
+        width: 30%;
+        margin-top: 40px;
+    }
+}
+
+.succes-feedback-modal {
+    color: var(--orange);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+        margin-top: 10px;
+    }
 }

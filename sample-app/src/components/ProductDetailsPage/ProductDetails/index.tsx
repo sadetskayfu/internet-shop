@@ -16,9 +16,10 @@ import WriteFeedBackModal from '../WriteFeedBackModal';
 
 interface IProductDetailsProps {
     product: IProduct | null
+    id: number
 }
 
-const ProductDetails: FC<IProductDetailsProps> = ({ product }) => {
+const ProductDetails: FC<IProductDetailsProps> = ({ product, id }) => {
 
     const [selectedImage, setSelectedImage] = useState<number>(0)
     const [isVisibleModal, setIsVisibleModal] = useState<boolean>(false)
@@ -61,7 +62,7 @@ const ProductDetails: FC<IProductDetailsProps> = ({ product }) => {
                 <Error error={productError} />
                 :
                 <>
-                        <WriteFeedBackModal visible={isVisibleFeedBackModal} setVisible={setIsVisibleFeedBackModal}/>
+                        <WriteFeedBackModal visible={isVisibleFeedBackModal} setVisible={setIsVisibleFeedBackModal} id={id}/>
                     <Modal isVisible={isVisibleModal} setIsVisible={setIsVisibleModal} padding='0px'>
                         <div className='prduct-details__slider'>
                             <ImageSlider images={product?.images} initialSlide={selectedImage} />

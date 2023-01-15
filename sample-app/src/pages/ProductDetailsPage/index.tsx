@@ -31,7 +31,7 @@ const ProductDetailsPage: FC = () => {
                 <LoadingSpinner />
                 :
                 <div className='container'>
-                    <ProductDetails product={product} />
+                    <ProductDetails id={Number(id)} product={product} />
                     <ProductReviews reviews={reviews} />
                 </div>}
         </div>

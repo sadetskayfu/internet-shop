@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import './style.scss'
 import FildReviewUser from '../FildReviewUser';
-import { IReviews } from '../../../models/reviews';
+import { IReview } from '../../../models/reviews';
 import { useAppSelector } from '../../../hooks/redux';
 import Error from '../../Error';
 
 interface IProductReviews {
-    reviews: IReviews | null
+    reviews: IReview[] | null
 }
 
 const ProductReviews: FC<IProductReviews> = ({ reviews }) => {
@@ -21,9 +21,9 @@ const ProductReviews: FC<IProductReviews> = ({ reviews }) => {
                 <Error error={reviewsError} />
                 :
                 <div className='product-reviews__reviews'>
-                    {reviews && reviews.reviews.length > 0 ?
+                    {reviews && reviews.length > 0 ?
                     <>
-                    {reviews?.reviews.map((i, index) => <FildReviewUser key={index} review={i} />)}
+                    {reviews?.map((i, index) => <FildReviewUser key={index} review={i} />)}
                     </>
                     :
                     <div className='product-reviews__no-reviews'>

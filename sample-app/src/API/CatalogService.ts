@@ -2,7 +2,7 @@ import axios from "axios";
 import { IProduct } from '../models/product'
 import { IFetchCatalogFiltr } from "../models/catalogFiltr";
 import { IgetAllFiltrProductsParams } from "../models/catalogAPI";
-import { IReviews } from "../models/reviews";
+import { ICreateReview, IReview } from "../models/reviews";
 
 const baseUrl = 'http://localhost:3333/'
 
@@ -34,12 +34,17 @@ export default class CatalogService {
     }
 
     static async getReviewsProductById(id: number) {
-        const response = await axios.get<IReviews>(`${baseUrl}reviews/${id}`)
+        const response = await axios.get<IReview[]>(`${baseUrl}reviews/?reviewId=${id}`)
         return response.data
     }
 
     static async getProductById(id: number) {
         const response = await axios.get<IProduct>(`${baseUrl}products/${id}`)
         return response.data
+    }
+
+    static async createReview(review: ICreateReview) {
+        const response = await axios.post(`${baseUrl}reviews/${review.id}/reviews`, review.review)
+        return response
     }
 }

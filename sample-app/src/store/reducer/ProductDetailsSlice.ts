@@ -1,14 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IProduct } from "../../models/product";
-import { IReviews } from "../../models/reviews";
-import { getReviewsByIdThunk, getProductByIdThunk } from "../thunk/ProductDetailsThunk";
+import { IReview } from "../../models/reviews";
+import { getReviewsByIdThunk, getProductByIdThunk, createReviewThunk } from "../thunk/ProductDetailsThunk";
 
 interface IInitialState {
     product: IProduct | null
-    reviews: IReviews | null
+    reviews: IReview[] | null
     isLoading: boolean
     productError: string
     reviewsError: string
+    createReviewError: string
 }
 
 const initialState: IInitialState = {
@@ -17,6 +18,7 @@ const initialState: IInitialState = {
     isLoading: false,
     productError: '',
     reviewsError: '',
+    createReviewError: '',
 }
 
 export const productDetailsSlice = createSlice({
@@ -50,8 +52,21 @@ export const productDetailsSlice = createSlice({
                 state.reviewsError = action.payload
                 state.isLoading = false
             })
-            .addCase(getReviewsByIdThunk.fulfilled.type, (state, action: PayloadAction<IReviews>) => {
+            .addCase(getReviewsByIdThunk.fulfilled.type, (state, action: PayloadAction<IReview[]>) => {
                 state.reviews = action.payload
+                state.reviewsError = ''
+                state.isLoading = false
+            })
+
+            // CREATE REVIEW
+            .addCase(createReviewThunk.pending.type, (state) => {
+                state.isLoading = true
+            })
+            .addCase(createReviewThunk.rejected.type, (state, action: PayloadAction<string>) => {
+                state.createReviewError = action.payload
+                state.isLoading = false
+            })
+            .addCase(createReviewThunk.fulfilled.type, (state) => {
                 state.reviewsError = ''
                 state.isLoading = false
             })
