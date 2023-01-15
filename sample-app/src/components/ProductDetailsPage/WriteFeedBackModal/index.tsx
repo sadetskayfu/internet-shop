@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import './style.scss'
 import RequireAuth from '../../../hok/RequireAuth'
 import Modal from '../../../ui-components/modal'
@@ -13,7 +13,7 @@ import { createReviewThunk } from '../../../store/thunk/ProductDetailsThunk'
 
 interface IWriteFeedBackModalProps {
     visible: boolean
-    setVisible: any
+    setVisible: React.Dispatch<React.SetStateAction<boolean>>
     id: number
 }
 

@@ -4,7 +4,7 @@ import './style.scss'
 interface IAsideMenuProps {
     children: ReactNode
     visible: boolean
-    setVisible: any
+    setVisible: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const AsideMenu: FC<IAsideMenuProps> = ({children, visible, setVisible}) => {

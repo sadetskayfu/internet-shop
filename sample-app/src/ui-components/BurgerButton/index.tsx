@@ -2,7 +2,7 @@ import {FC} from 'react';
 import './style.scss'
 
 interface IBurgerButtonProps {
-    onClick: any
+    onClick: () => void
 }
 
 const BurgerButton: FC<IBurgerButtonProps> = ({...props}) => {

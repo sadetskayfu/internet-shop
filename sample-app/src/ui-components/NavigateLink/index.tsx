@@ -5,7 +5,7 @@ import './style.scss'
 interface INavigateLink {
     children: React.ReactNode
     to: string
-    onClick?: any
+    onClick?: () => void
 }
 
 const NavigateLink: React.FC<INavigateLink> = ({ children, to, ...props }) => {

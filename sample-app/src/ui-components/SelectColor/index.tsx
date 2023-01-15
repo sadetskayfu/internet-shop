@@ -5,7 +5,7 @@ import { ReactComponent as ArrowDown } from '../../assets/icons/arrowDown.svg'
 interface ISelectProps {
     options: string[] | undefined
     value: string | undefined
-    onChange: any | undefined
+    onChange: React.Dispatch<React.SetStateAction<string>>
 }
 
 const ColorSelect: FC<ISelectProps> = ({ options, value, onChange }) => {

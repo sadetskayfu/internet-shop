@@ -18,7 +18,7 @@ import { ReactComponent as Close } from '../../assets/icons/close.svg'
 
 interface IFilterMenuProps {
     visible: boolean
-    setVisible: any
+    setVisible: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const CatalogPage: FC = () => {

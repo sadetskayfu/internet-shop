@@ -1,12 +1,13 @@
-import { useState, FC, useEffect } from 'react';
+import { useState, FC } from 'react';
 import CheckBox from '../../../ui-components/CheckBox';
 import { useAppDispatch } from '../../../hooks/redux';
 import './style.scss'
+import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 
 interface ICheckBoxFilterButtonProps {
     title: string
-    setCategoryFiltr: any
-    removeCategoryFiltr: any
+    setCategoryFiltr: ActionCreatorWithPayload<string>
+    removeCategoryFiltr: ActionCreatorWithPayload<string>
     categoryFilters: string[]
 }
 

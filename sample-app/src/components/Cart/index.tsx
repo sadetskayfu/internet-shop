@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 
 interface ICartProps {
     visible: boolean
-    setVisible: any
+    setVisible: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const Cart: FC<ICartProps> = ({ visible, setVisible }) => {

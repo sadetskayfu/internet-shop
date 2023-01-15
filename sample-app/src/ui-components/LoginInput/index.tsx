@@ -1,8 +1,9 @@
-import React from 'react';
+import {FC} from 'react';
+import { FieldError } from 'react-hook-form';
 import './style.scss'
 
 interface ILoginInputProps {
-    errors?: any,
+    errors?: FieldError | undefined,
     register?: any,
     id?: string,
     label?: string,
@@ -10,7 +11,7 @@ interface ILoginInputProps {
     type: string,
 }
 
-const LoginInput: React.FC<ILoginInputProps> = ({errors, register, id, label, ...props}) => {
+const LoginInput: FC<ILoginInputProps> = ({errors, register, id, label, ...props}) => {
     return (
         <div className={errors ? 'login-input active' : 'login-input'}>
             <input

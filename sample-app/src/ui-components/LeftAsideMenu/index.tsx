@@ -4,7 +4,7 @@ import './style.scss'
 interface ILeftAsideMenuProps {
     children: ReactNode
     visible: boolean
-    setVisible: any
+    setVisible: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const LeftAsideMenu: FC<ILeftAsideMenuProps> = ({children, visible, setVisible}) => {

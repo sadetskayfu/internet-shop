@@ -13,7 +13,6 @@ import { ROUTE } from '../../constans/route';
 
 interface IProductCardProps {
     item: IProduct
-    margin?: string
 }
 
 const ProductCard: FC<IProductCardProps> = ({ item }) => {

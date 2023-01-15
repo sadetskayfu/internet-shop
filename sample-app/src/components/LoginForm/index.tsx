@@ -62,7 +62,7 @@ const LoginForm: React.FC<ILoginFormProps> = ({redirectToBack}) => {
             {error && <div className='login-form__error'>{error}</div>}
             <div className='login-form__footer'>
                 <Button isValid={isValid} type='submit'>Login</Button>
-                <LinkToBack> ⇚ go back</LinkToBack>
+                <LinkToBack>Back</LinkToBack>
             </div>
         </form>
     );

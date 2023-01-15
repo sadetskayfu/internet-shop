@@ -1,17 +1,17 @@
-import { FC, useState, useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import './style.scss'
 import CheckBoxFilterButton from '../CheckBoxFilterButton';
+import { ActionCreatorWithPayload, ActionCreatorWithoutPayload } from '@reduxjs/toolkit';
 import { useAppDispatch } from '../../../hooks/redux';
-import { ReactComponent as ArrowDown } from '../../../assets/icons/arrowDown.svg'
 import { ReactComponent as ClearFilter } from '../../../assets/icons/clearFilter.svg'
 import DropDown from '../../../ui-components/DropDown';
 
 interface IFilterSectionProps {
     titleSection: string
     category: string[]
-    setCategoryFiltr: any
-    removeCategoryFiltr: any
-    removeAllFiltr: any
+    setCategoryFiltr: ActionCreatorWithPayload<string>
+    removeCategoryFiltr: ActionCreatorWithPayload<string>
+    removeAllFiltr: ActionCreatorWithoutPayload
     categoryFilters: string[]
 }
 

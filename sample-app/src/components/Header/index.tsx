@@ -1,4 +1,4 @@
-import { useState, FC, useEffect } from 'react';
+import { useState, FC } from 'react';
 import './style.scss'
 import { Link } from 'react-router-dom'
 import { useAppSelector } from '../../hooks/redux';

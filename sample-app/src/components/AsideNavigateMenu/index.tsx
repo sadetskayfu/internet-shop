@@ -10,7 +10,7 @@ import { useAppDispatch } from '../../hooks/redux';
 
 interface IAsideNavigateMenuProps {
     visible: boolean
-    setVisible: any
+    setVisible: React.Dispatch<React.SetStateAction<boolean>>
     userEmail: string
 }
 

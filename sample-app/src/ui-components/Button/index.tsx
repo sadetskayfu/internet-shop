@@ -5,7 +5,7 @@ interface IButtonProps {
     children: ReactNode
     type?: 'submit' | 'reset' | 'button' | undefined
     isValid?: boolean
-    onClick?: any
+    onClick?: () => void
 }
 
 const Button: FC<IButtonProps> = ({children, isValid, ...props}) => {

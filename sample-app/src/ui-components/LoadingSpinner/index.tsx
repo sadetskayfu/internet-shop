@@ -1,9 +1,7 @@
-import React from 'react';
+import {FC} from 'react';
 import './style.scss'
 
-
-
-const LoadingSpinner: React.FC = () => {
+const LoadingSpinner: FC = () => {
     return (
         <div className='load-spinner-container' >
             <div className='spinner'>

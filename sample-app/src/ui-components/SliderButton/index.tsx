@@ -4,7 +4,7 @@ import {ReactComponent as Arrow} from '../../assets/icons/arrowLeft.svg'
 
 interface ISliderButtonProps {
     rotate?: boolean
-    onClick: any
+    onClick: () => void
 }
 
 const SliderButton: FC<ISliderButtonProps> = ({rotate, ...props}) => {

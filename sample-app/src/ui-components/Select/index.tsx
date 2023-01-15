@@ -1,11 +1,11 @@
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import './style.scss'
 import { ReactComponent as ArrowDown } from '../../assets/icons/arrowDown.svg'
 
 interface ISelectProps {
     options: string[] | undefined
     value: string | undefined
-    onChange: any | undefined
+    onChange: React.Dispatch<React.SetStateAction<string>>
 }
 
 const Select: FC<ISelectProps> = ({ options, value, onChange }) => {

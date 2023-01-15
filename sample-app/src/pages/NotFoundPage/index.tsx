@@ -1,7 +1,6 @@
-import React from 'react';
-import { INotFoundPageProps } from './interface';
+import {FC} from 'react';
 
-const NotFoundPage: React.FC<INotFoundPageProps> = () => {
+const NotFoundPage: FC = () => {
     return (
         <div>
             NotFoundPage

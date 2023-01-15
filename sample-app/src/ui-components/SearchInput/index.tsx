@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import './style.scss'
+import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 import { ReactComponent as SearchIcon } from '../../assets/icons/searchIcon.svg'
 import { ReactComponent as Clear } from '../../assets/icons/close.svg'
 
@@ -7,7 +8,7 @@ interface ISearchInputProps {
     placeholder?: string
     type: string
     value: string
-    onChange: any
+    onChange: ActionCreatorWithPayload<string>
     dispatch?: any
 }
 
